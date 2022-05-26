@@ -1,0 +1,229 @@
+@import "vars";
+@import "mixin";
+// common
+.section {
+  padding: 30px 0;
+  .titleBox {
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+    h2 {
+      margin-bottom: 10px;
+      font-size: $font-large / 2;
+      font-weight: 500;
+    }
+  }
+}
+#mainVisual {
+  overflow: hidden;
+  li {
+    height: 100vh;
+    background: {
+      position: 50% 50%;
+      size: cover;
+      repeat: no-repeat;
+    }
+    &.visual01 {
+      background-image: url(../images/main/mainVisual01.jpg);
+    }
+    &.visual02 {
+      background-image: url(../images/main/mainVisual02.jpg);
+    }
+    &.visual03 {
+      background-image: url(../images/main/mainVisual03.jpg);
+    }
+  }
+  .slogan {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    color: #fff;
+    transform: translateY(-25%);
+    text-align: center;
+    user-select: none;
+    h2 {
+      margin-bottom: 30px;
+      font-size: $font-large / 1.5;
+      font-weight: 500;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+  }
+  .iconScroll {
+    width: 100%;
+    position: absolute;
+    bottom: 45px;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    .icon {
+      display: block;
+      width: 12px;
+      height: 30px;
+      margin: 0 auto 10px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+      box-sizing: unset;
+      &:before {
+        // display: block;
+        // position: relative;
+        width: 2px;
+        height: 5px;
+        margin: 10px auto 0;
+        background-color: #fff;
+        animation: mouseAnimation 1s ease-in-out 0s infinite alternate;
+        @include pseudo(block, relative, ""); // content: "";
+      }
+    }
+  }
+}
+#quickMenu {
+  padding: 0;
+  .container ul {
+    display: flex;
+    padding: 0 5px;
+    li {
+      position: relative;
+      overflow: hidden;
+      width: 33.33%;
+      margin: 10px 5px;
+      .txtBox {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: #fff;
+        p {
+          margin-bottom: 10px;
+          font-size: 12px;
+          font-weight: 200;
+          display: none;
+        }
+        h3 {
+          font-size: $font-medium / 1.75;
+          font-weight: 500;
+        }
+      }
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+}
+#business {
+  background-image: url(../images/main/bgBusiness.jpg);
+  .container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px;
+    li {
+      position: relative;
+      overflow: hidden;
+      width: calc(50% - 10px);
+      margin: 5px;
+      .txtBox {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: #fff;
+        h3 {
+          font-size: 12px;
+          font-weight: 700;
+        }
+        p {
+          font-size: 12px;
+          display: none;
+        }
+      }
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+}
+#news {
+  overflow: hidden;
+  .list {
+    display: flex;
+    li {
+      width: 50%;
+      border: 1px solid rgba(153, 153, 153, 0.5);
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .desc {
+        overflow: hidden;
+        padding: 30px;
+        color: #333;
+        h3 {
+          margin-bottom: 10px;
+          font-size: 24px / 1.5;
+        }
+        .txt {
+          font-size: 12px;
+          @include multiEllipsis(2, 1.5);
+          margin-bottom: 20px;
+        }
+        .date {
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+#customer {
+  background-image: url(../images/main/bgCustomer.jpg);
+  .titleBox {
+    color: #fff;
+    p {
+      padding: 20px 30px;
+      word-break: keep-all;
+      font-size: 14px;
+      line-height: 1.5em;
+      br {
+        content: "";
+      }
+    }
+  }
+  .container {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    color: #fff;
+    background-color: $main-color;
+    border-radius: 100px;
+    font-size: 12px;
+  }
+}
+
+@keyframes mouseAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
