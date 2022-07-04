@@ -31,4 +31,69 @@
   </div>
 </footer>
 </body>
+<script>
+  //this, closure, event loop, browser rendering <-면접 질문
+  const header = $("#header");
+  const btnAll = $("#header .btnAll");
+  btnAll.on("click", function () {
+    header.toggleClass("open");
+  });
+
+  const depth01 = $("#gnb .depth01"); 
+  depth01.on("click",function(e){
+    e.preventDefault(); // a태그에 있던 원래 있던 링크 기능 무력화
+    const depth02 = $(this).next("#gnb .depth02");
+    const siblings = $(this).parent().siblings().find("#gnb .depth02");
+    siblings.stop().slideUp();
+    depth02.stop().slideToggle();
+  });
+
+  lnbDepth01.on("click",function(){
+    $(this).next("ul").slideToggle();
+  })
+  //a에 클릭이벤트가 걸리면 반드시 기존 a가 가지고 있는 링크 기능을 무력화 시킬 떄
+  //form 안에 있는 button에 클릭 이벤트가 걸리면 기존 button이 가지고 있는 action 링크 기능을 무력화 시킬 떄
+depth01.on("click",function(e) {
+  //e.preventDefault();
+  console.log(this);
+  console.log($(this));
+  const depth02 = $(this).next(".depth02")
+  depth02.slideToggle();
+  return false;
+})
+  // const lnbChild01 = document.querySelector("#lnb .depth01 ul");
+  // const lnbBig = document.querySelector("#lnb .depth01");
+  // lnbBig.addEventListener("click", function () {
+  //   lnbChild01.classList.toggle("open");
+  // });
+
+  // const lnbChild02 = document.querySelector("#lnb .depth02 ul");
+  // const lnbSmall = document.querySelector("#lnb .depth02");
+  // lnbSmall.addEventListener("click", function () {
+  //   lnbChild02.classList.toggle("open");
+  // });
+
+  window.addEventListener("scroll", function () {
+    // console.log("iamscrolling", window.scrollY);
+    //window.scrollY 0이면 제일 꼭대기. 그렇지 않으면 scroll이 내려가는 중
+    if (window.scrollY > 360) {
+      header.classList.add("scroll");
+    } else {
+      header.classList.remove("scroll");
+    }
+  });
+
+  new Swiper("#mainVisual", {
+    // effect: "cube",
+    loop: true,
+  });
+
+  new Swiper("#news .container", {
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    centeredSlides: true,
+    loop: true,
+  }); 
+
+</script>
 </html>

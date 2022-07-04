@@ -2,14 +2,12 @@
   width: 100%;
   border-top: 2px solid #bf0c14;
 }
-
 .contentsTable tbody th,
 .contentsTable tbody td {
   padding: 15px 10px;
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
-
 .contentsTable tbody th:nth-child(1),
 .contentsTable tbody td:nth-child(1) {
   border-left: none;
@@ -18,8 +16,8 @@
 .boardTable {
   width: 100%;
   border-top: 2px solid #bf0c14;
+  font-size: 14px;
 }
-
 .boardTable tbody th,
 .boardTable tbody td,
 .boardTable thead th,
@@ -28,34 +26,32 @@
   border-bottom: 1px solid #999;
   text-align: center;
 }
-
 .boardTable .subject {
   text-align: left;
 }
 
 .pagination {
+  margin: 15px 0;
+  width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 10px;
 }
-
 .pagination ul {
   display: flex;
   justify-content: center;
 }
-
 .pagination a {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 1px;
 }
-
 .pagination a.first {
   background-color: #bf0c14;
 }
-
 .pagination a.first:before {
   color: #fff;
   display: inline-block;
@@ -63,11 +59,9 @@
   font-family: "Material Icons";
   content: "keyboard_double_arrow_left";
 }
-
 .pagination a.prev {
   background-color: #bf0c14;
 }
-
 .pagination a.prev:before {
   color: #fff;
   display: inline-block;
@@ -75,11 +69,9 @@
   font-family: "Material Icons";
   content: "chevron_left";
 }
-
 .pagination a.next {
   background-color: #bf0c14;
 }
-
 .pagination a.next:before {
   color: #fff;
   display: inline-block;
@@ -87,11 +79,9 @@
   font-family: "Material Icons";
   content: "chevron_right";
 }
-
 .pagination a.last {
   background-color: #bf0c14;
 }
-
 .pagination a.last:before {
   color: #fff;
   display: inline-block;
@@ -99,7 +89,6 @@
   font-family: "Material Icons";
   content: "keyboard_double_arrow_right";
 }
-
 .pagination a.active {
   border-bottom: 2px solid #bf0c14;
 }
@@ -108,28 +97,27 @@
   background-color: #ccc;
   display: flex;
   justify-content: center;
-  padding: 80px 150px;
+  padding: 30px 20px;
 }
-
 .searchForm #searchTxt {
-  height: 50px;
+  height: 40px;
   padding: 0 10px;
   border: 1px solid #999;
   box-sizing: border-box;
-  margin-right: 5px;
+  margin-right: 10px;
   flex-grow: 1;
 }
-
 .searchForm #searchCategory {
-  height: 50px;
+  height: 30px;
   padding: 0 10px;
   border: 1px solid #999;
   margin-right: 5px;
 }
-
 .searchForm button {
-  width: 80px;
+  width: 100px;
   background-color: #111;
   color: #fff;
-  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  border: none;
 }

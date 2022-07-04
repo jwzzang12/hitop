@@ -162,23 +162,4 @@
   </div>
 </section>
 <!-- customer end -->
-<script>
-  const header = document.querySelector("#header");
-  const btnAll = document.querySelector("#header .btnAll");
-  btnAll.addEventListener("click", function () {
-    header.classList.toggle("open");
-  });
-
-  new Swiper("#mainVisual", {
-    // effect: "cube",
-    loop: true,
-  });
-
-  new Swiper("#news .container", {
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    centeredSlides: true,
-    loop: true,
-  });
-</script>
 <? include("../include/footer.html"); ?>
