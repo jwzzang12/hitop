@@ -47,28 +47,24 @@
     align-items: center;
     margin: 0 1px;
     &.first {
-      background-color: $main-color;
       &:before {
         color: #fff;
         @include icon("keyboard_double_arrow_left", 0);
       }
     }
     &.prev {
-      background-color: $main-color;
       &:before {
         color: #fff;
         @include icon("chevron_left", 0);
       }
     }
     &.next {
-      background-color: $main-color;
       &:before {
         color: #fff;
         @include icon("chevron_right", 0);
       }
     }
     &.last {
-      background-color: $main-color;
       &:before {
         color: #fff;
         @include icon("keyboard_double_arrow_right", 0);

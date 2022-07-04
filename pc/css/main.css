@@ -1,19 +1,16 @@
 .section {
   padding: 100px 0;
 }
-
 .section .titleBox {
   margin-bottom: 50px;
   color: #333;
   text-align: center;
 }
-
 .section .titleBox h2 {
   margin-bottom: 20px;
   font-size: 48px;
   font-weight: 500;
 }
-
 .section .titleBox p {
   line-height: 1.5em;
 }
@@ -26,26 +23,42 @@
 #mainVisual {
   overflow: hidden;
 }
-
 #mainVisual li {
   height: 100vh;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+}
+#mainVisual li.swiper-slide-active .aniMask {
+  width: 100%;
+  transition: all 1s ease;
+}
+#mainVisual li.swiper-slide-prev .aniMask {
+  width: 100%;
+}
+#mainVisual li .aniMask {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+#mainVisual li .img {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-#mainVisual li.visual01 {
+#mainVisual li.visual01 .img {
   background-image: url(../images/main/mainVisual01.jpg);
 }
-
-#mainVisual li.visual02 {
+#mainVisual li.visual02 .img {
   background-image: url(../images/main/mainVisual02.jpg);
 }
-
-#mainVisual li.visual03 {
+#mainVisual li.visual03 .img {
   background-image: url(../images/main/mainVisual03.jpg);
 }
-
 #mainVisual .slogan {
   width: 100%;
   position: absolute;
@@ -56,20 +69,58 @@
   text-align: center;
   user-select: none;
 }
-
 #mainVisual .slogan h2 {
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 500;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
 #mainVisual .slogan p {
   font-size: 22px;
   font-weight: 300;
   line-height: 1.5;
 }
-
+#mainVisual .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  bottom: 150px;
+  z-index: 10;
+}
+#mainVisual .pagination .swiper-pagination-bullets {
+  width: auto;
+}
+#mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #fff;
+  background: none;
+  opacity: 1;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+#mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet-active {
+  width: 80px;
+  background-color: #fff;
+}
+#mainVisual .pagination .autoBtns button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#mainVisual .pagination .autoBtns span {
+  display: block;
+  width: 50px;
+  font-size: 30px;
+  color: #fff;
+  transform: translateY(-2px);
+}
+#mainVisual .pagination .autoBtns .play {
+  display: none;
+}
 #mainVisual button {
   position: absolute;
   top: 50%;
@@ -78,24 +129,20 @@
   border: none;
   background-color: rgba(0, 0, 0, 0.01);
 }
-
 #mainVisual button.prev {
   left: 0;
 }
-
 #mainVisual button.next {
   right: 0;
 }
-
 #mainVisual .iconScroll {
   width: 100%;
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   z-index: 1;
   color: #fff;
   text-align: center;
 }
-
 #mainVisual .iconScroll .icon {
   display: block;
   width: 24px;
@@ -105,7 +152,6 @@
   border-radius: 100px;
   box-sizing: unset;
 }
-
 #mainVisual .iconScroll .icon:before {
   width: 3px;
   height: 8px;
@@ -120,16 +166,13 @@
 #quickMenu {
   padding: 0;
 }
-
 #quickMenu .container ul {
   display: flex;
 }
-
 #quickMenu .container ul li {
   position: relative;
   overflow: hidden;
 }
-
 #quickMenu .container ul li:before {
   top: 20px;
   right: 20px;
@@ -144,34 +187,28 @@
   position: absolute;
   content: "";
 }
-
 #quickMenu .container ul li:hover:before {
   opacity: 1;
 }
-
 #quickMenu .container ul li:hover img {
   transform: scale(1.2);
 }
-
 #quickMenu .container ul li .txtBox {
   position: absolute;
   bottom: 40px;
   left: 40px;
   color: #fff;
 }
-
 #quickMenu .container ul li .txtBox p {
   margin-bottom: 20px;
   font-size: 21px;
   font-weight: 300;
 }
-
 #quickMenu .container ul li .txtBox h3 {
   font-size: 38px;
   font-weight: 600;
   line-height: 3rem;
 }
-
 #quickMenu .container ul li img {
   transition: transform 0.25s ease-in-out;
   vertical-align: top;
@@ -180,12 +217,10 @@
 #business {
   background-image: url(../images/main/bgBusiness.jpg);
 }
-
 #business .titleBox p {
   font-size: 20px;
   font-weight: 300;
 }
-
 #business .container ul {
   display: flex;
   justify-content: space-between;
@@ -193,29 +228,24 @@
   height: 720px;
   align-content: space-between;
 }
-
 #business .container ul li {
   position: relative;
   overflow: hidden;
 }
-
 #business .container ul li:hover img {
   transform: scale(1.2);
 }
-
 #business .container ul li .txtBox {
   position: absolute;
   bottom: 40px;
   left: 40px;
   color: #fff;
 }
-
 #business .container ul li .txtBox h3 {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 700;
 }
-
 #business .container ul li img {
   transition: transform 0.5s ease-in-out;
   vertical-align: top;
@@ -225,7 +255,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 #news .list li {
   flex-basis: 31.33%;
   position: relative;
@@ -233,16 +262,13 @@
   box-shadow: inset 0 0 0 #999;
   transition: all 0.25s ease-in-out;
 }
-
 #news .list li:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 10px rgba(51, 51, 51, 0.2);
 }
-
 #news .list li:hover:after {
   box-shadow: inset 0 0 0 3px #bf0c14;
 }
-
 #news .list li:after {
   top: 0;
   right: 0;
@@ -254,23 +280,19 @@
   position: absolute;
   content: "";
 }
-
 #news .list li img {
   width: 100%;
   height: 380px;
   object-fit: cover;
 }
-
 #news .list li .desc {
   padding: 30px;
   color: #333;
 }
-
 #news .list li .desc h3 {
   margin-bottom: 20px;
   font-size: 24px;
 }
-
 #news .list li .desc .txt {
   display: -webkit-box;
   height: 3em;
@@ -278,8 +300,8 @@
   margin-bottom: 20px;
   line-height: 1.5;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-
 #news .list li .desc .date {
   color: #999;
 }
@@ -287,11 +309,9 @@
 #customer {
   background-image: url(../images/main/bgCustomer.jpg);
 }
-
 #customer .titleBox {
   color: #fff;
 }
-
 #customer .titleBox h2:after {
   display: block;
   width: 30px;
@@ -300,7 +320,6 @@
   content: "";
   background-color: #fff;
 }
-
 #customer .container {
   display: block;
   margin: 0 auto;
@@ -311,7 +330,6 @@
   justify-content: center;
   margin-top: 50px;
 }
-
 .btns .btn {
   display: flex;
   justify-content: center;

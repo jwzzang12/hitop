@@ -1,16 +1,35 @@
 <? include("../include/header.html"); ?>
 <div id="mainVisual">
   <ul class="swiper-wrapper">
-    <li class="swiper-slide visual01"></li>
-    <li class="swiper-slide visual02"></li>
-    <li class="swiper-slide visual03"></li>
+    <li class="swiper-slide visual01">
+      <div class="aniMask">
+        <div class="img"></div>
+      </div>
+    </li>
+    <li class="swiper-slide visual02">
+      <div class="aniMask">
+        <div class="img"></div>
+      </div>
+    </li>
+    <li class="swiper-slide visual03">
+      <div class="aniMask">
+        <div class="img"></div>
+      </div>
+    </li>
   </ul>
   <div class="slogan">
-    <h2>High Technology TOP People</h2>
-    <p>
+    <h2 data-splitting>High Technology TOP People</h2>
+    <p data-splitting>
       아름답고 쾌적한 거리, 안전하고 차별화된 공간을 원하십니까? <br />
       최고의 기술을 가진 최상의 조직! 자연을 닮은 제품을 제공하는 하이탑입니다.
     </p>
+  </div>
+  <div class="pagination">
+    <div class="bullets"></div>
+    <div class="autoBtns">
+      <button class="pause btn"><span class="material-icons"> pause </span></button>
+      <button class="play btn"><span class="material-icons"> play_arrow </span></button>
+    </div>
   </div>
   <button class="prev">
     <img src="../images/main/btnPrev.png" alt="" />
@@ -168,10 +187,43 @@
 </section>
 <!-- customer end -->
 <script>
-  new Swiper("#mainVisual", {
+  Splitting();
+  const play = document.querySelector("#mainVisual .play");
+  const pause = document.querySelector("#mainVisual .pause");
+  pause.addEventListener("click", function () {
+    mainVisualSlider.autoplay.stop();
+    play.style.display = "block";
+    pause.style.display = "none";
+  });
+  play.addEventListener("click", function () {
+    mainVisualSlider.autoplay.start();
+    play.style.display = "none";
+    pause.style.display = "block";
+  });
+  const mainVisualTL = gsap.timeline();
+  // mainVisualTL
+  //   .from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, delay: 1, duration: 1, ease: "power4.out", stagger: 0.1 })
+  //   .from("#mainVisual .slogan p .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.02 }, 1);
+  mainVisualTL
+    .from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, delay: 1, duration: 1, ease: "power4.out", stagger: 0.1 })
+    .from("#mainVisual .slogan p .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.02 }, 1);
+  // gsap.from("#mainVisual .slogan h2 .char", { y: -100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.1 });
+  const mainVisualSlider = new Swiper("#mainVisual", {
+    effect: "fade",
+    speed: 1000,
+    loop: true,
     navigation: {
       nextEl: "#mainVisual .next",
       prevEl: "#mainVisual .prev",
+    },
+    pagination: {
+      el: "#mainVisual .pagination .bullets",
+      type: "bullets",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
     },
   });
 </script>
